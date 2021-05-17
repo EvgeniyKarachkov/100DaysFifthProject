@@ -10,10 +10,12 @@ import UIKit
 
 class ViewController: UITableViewController {
     var allWords = [String]()
-    var userWords = [String]()
+    var usedWords = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(UIBarButtonSystemItem: .add, target: self, action: #selector(prompForAnswer))
         
         if let startWordsURL = Bundle.main.url(forResource: "start", withExtension: "txt") {
             if let startWords = try? String(contentsOf: startWordsURL) {
@@ -30,39 +32,39 @@ class ViewController: UITableViewController {
     
     
     func startGame() {
-        var titles = allWords
-        titles.shuffle()
-        title = titles.first!
-        userWords.removeAll(keepingCapacity: true)
+        title = allWords.randomElement()
+        usedWords.removeAll(keepingCapacity: true)
         tableView.reloadData()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return userWords.count
+        return usedWords.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Word", for: indexPath)
-        cell.textLabel?.text = userWords[indexPath.row]
+        cell.textLabel?.text = usedWords[indexPath.row]
         return cell
     }
  
-}
-
-
-
-
-
-extension MutableCollection where Index == Int {
-    
-    mutating func shuffle() {
+    @objc func promptForAnswer() {
+        let ac = UIAlertController(title: "Enter answer", message: nil, preferredStyle: .alert)
+        ac.addTextField()
         
-        if count < 2 { return }
-        for i in startIndex ..< endIndex - 1 {
-            let j = Int(arc4random_uniform(UInt32(endIndex - i))) + i
-            if i != j {
-                swap(&self[i], &self[j])
-            }
+        let submitAction = UIAlertAction(title: "Submit", style: .default) {
+            [weak self, weak ac] _ in
+            guard let answer = ac?.textFields?[0].text else { return }
+            self?.submit(answer)
         }
+    
+        ac.addAction(submitAction)
+        present(ac, animated: true)
+        
     }
+    
+    func submit(_ answer: String) {
+    
+    }
+    
 }
+
