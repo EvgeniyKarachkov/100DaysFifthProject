@@ -12,6 +12,7 @@
 		156DDA8E26529117006847FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 156DDA8C26529117006847FE /* Main.storyboard */; };
 		156DDA9026529117006847FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 156DDA8F26529117006847FE /* Assets.xcassets */; };
 		156DDA9326529117006847FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 156DDA9126529117006847FE /* LaunchScreen.storyboard */; };
+		156DDA9B26529400006847FE /* start.txt in Resources */ = {isa = PBXBuildFile; fileRef = 156DDA9A26529400006847FE /* start.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		156DDA8F26529117006847FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		156DDA9226529117006847FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		156DDA9426529117006847FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		156DDA9A26529400006847FE /* start.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = start.txt; path = "../../../HackingWithSwift-main/Classic/project5-files/start.txt"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				156DDA8F26529117006847FE /* Assets.xcassets */,
 				156DDA9126529117006847FE /* LaunchScreen.storyboard */,
 				156DDA9426529117006847FE /* Info.plist */,
+				156DDA9A26529400006847FE /* start.txt */,
 			);
 			path = "100 Days fifth project";
 			sourceTree = "<group>";
@@ -125,6 +128,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				156DDA9326529117006847FE /* LaunchScreen.storyboard in Resources */,
+				156DDA9B26529400006847FE /* start.txt in Resources */,
 				156DDA9026529117006847FE /* Assets.xcassets in Resources */,
 				156DDA8E26529117006847FE /* Main.storyboard in Resources */,
 			);
